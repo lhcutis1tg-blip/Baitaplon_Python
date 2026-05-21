@@ -7,10 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5ad69TQa+oC0hbiQXg1dpj9FDKkBd4a2zYSXHgcz/CHClmafE3dE/2a0LzjE2ZFS" crossorigin="anonymous">
   <style>
     body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #eef2ff; color: #111827; }
-    header { background: linear-gradient(135deg, #1d4ed8, #2563eb); color: white; padding: 50px 20px; }
-    header h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 0.5rem; }
-    header p { font-size: 1.05rem; max-width: 760px; margin: 0 auto; opacity: 0.9; }
-    nav a { color: white; text-decoration: none; }
+    header { background: linear-gradient(135deg, #1d4ed8, #2563eb); color: white; padding: 52px 20px; }
+    header h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 0.75rem; }
+    header p { font-size: 1.05rem; max-width: 760px; margin: 0 auto; opacity: 0.95; }
     .section-card { border-radius: 1.5rem; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); }
     .badge-custom { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; }
     pre code { background: #eef2ff; padding: 0.3rem 0.5rem; border-radius: 0.5rem; }
@@ -37,7 +36,7 @@
       <div class="row align-items-center">
         <div class="col-lg-7">
           <h2 class="mb-3">Giới thiệu</h2>
-          <p>Trong doanh nghiệp, báo cáo tài chính là nguồn dữ liệu quan trọng nhất để đánh giá sức khỏe kinh doanh. Một phân tích chuẩn giúp nhận diện cơ hội tăng trưởng và hạn chế rủi ro tài chính.</p>
+          <p>Trong doanh nghiệp, báo cáo tài chính là nguồn dữ liệu chính để đánh giá sức khỏe hoạt động. Phân tích báo cáo giúp nhận diện cơ hội tăng trưởng và hạn chế rủi ro tài chính.</p>
           <div class="p-4 rounded-4 bg-primary bg-opacity-10">
             <p class="mb-0"><strong>Điểm cần nhớ:</strong> phân tích tài chính không chỉ tập trung vào lợi nhuận, mà còn bao gồm thanh khoản, hiệu quả vốn và chất lượng dòng tiền.</p>
           </div>
@@ -45,7 +44,7 @@
         <div class="col-lg-5 text-center mt-4 mt-lg-0">
           <svg width="100%" height="auto" viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" class="rounded-4 border" style="background:#f8fafc;">
             <rect width="420" height="330" fill="#f8fafc" rx="24"/>
-            <path d="M40 280 L40 40 L380 40" stroke="#cbd5e1" stroke-width="2" fill="none" />
+            <path d="M40 280 L40 50 L380 50" stroke="#cbd5e1" stroke-width="2" fill="none" />
             <path d="M40 240 L100 210 L160 190 L220 160 L280 140 L340 120" stroke="#2563eb" stroke-width="5" fill="none" stroke-linecap="round" />
             <path d="M40 260 L100 240 L160 225 L220 210 L280 195 L340 185" stroke="#ef4444" stroke-width="5" fill="none" stroke-linecap="round" />
             <path d="M40 270 L100 250 L160 235 L220 220 L280 205 L340 195" stroke="#16a34a" stroke-width="5" fill="none" stroke-linecap="round" />
@@ -131,7 +130,7 @@
 
     <section id="charts" class="section-card p-4 p-md-5 bg-white mt-5">
       <h2>3. Biểu đồ phân tích</h2>
-      <p class="mb-4">Biểu đồ dưới đây mô tả xu hướng doanh thu, chi phí và lợi nhuận theo thời gian.</p>
+      <p class="mb-4">Biểu đồ mô phỏng xu hướng doanh thu, chi phí và lợi nhuận theo thời gian.</p>
       <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
         <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ doanh thu chi phí và lợi nhuận">
           <rect x="0" y="0" width="800" height="450" fill="#f8fafc"/>
@@ -191,13 +190,13 @@
         <div class="col-md-6">
           <div class="p-4 bg-light rounded-4 h-100">
             <h3>Giảm chi phí không hiệu quả</h3>
-            <p>Đánh giá chi phí quản lý, bán hàng và marketing để tìm điểm tối ưu.</p>
+            <p>Đánh giá chi phí quản lý, bán hàng và marketing để tối ưu hóa lợi nhuận.</p>
           </div>
         </div>
         <div class="col-md-6">
           <div class="p-4 bg-light rounded-4 h-100">
             <h3>Quản lý hàng tồn kho</h3>
-            <p>Hàng tồn kho lớn có thể gây mất thanh khoản và tăng chi phí lưu kho. Quản lý hiệu quả giúp cải thiện thanh khoản.</p>
+            <p>Hàng tồn kho lớn có thể gây mất thanh khoản và tăng chi phí lưu kho. Quản lý tốt sẽ giúp giảm rủi ro.</p>
           </div>
         </div>
         <div class="col-md-6">
@@ -212,7 +211,7 @@
   </main>
 
   <footer class="section-card p-4 p-md-5 bg-white text-center">
-    <p class="mb-3">Website mô tả phân tích báo cáo tài chính doanh nghiệp. Phù hợp để trình bày kế hoạch, đề tài hoặc báo cáo học phần.</p>
+    <p class="mb-3">Website giới thiệu phân tích báo cáo tài chính doanh nghiệp. Phù hợp cho báo cáo, bài tập hoặc thuyết trình học thuật.</p>
     <a href="financial-report.md" class="btn btn-primary btn-sm">Xem phiên bản Markdown</a>
   </footer>
 
