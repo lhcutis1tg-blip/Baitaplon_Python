@@ -3,116 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Báo cáo tài chính doanh nghiệp</title>
+  <title>Báo cáo tài chính chuyên sâu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5ad69TQa+oC0hbiQXg1dpj9FDKkBd4a2zYSXHgcz/CHClmafE3dE/2a0LzjE2ZFS" crossorigin="anonymous">
   <style>
-    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #eef3fb; color: #0f172a; padding-top: 76px; }
-    .navbar { transition: background-color 0.25s ease, transform 0.3s ease; }
-    .fixed-navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; background: rgba(15, 23, 42, 0.96); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
-    header { background: linear-gradient(135deg, #12203c 0%, #1d4ed8 52%, #2563eb 100%); color: white; padding: 72px 20px 48px; }
-    .hero-title { font-size: clamp(2.5rem, 4vw, 4.5rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.04em; }
-    .hero-text { font-size: 1.05rem; max-width: 660px; opacity: 0.92; line-height: 1.75; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.85rem 1.1rem; border-radius: 999px; background: rgba(255, 255, 255, 0.12); color: #dbeafe; border: 1px solid rgba(255, 255, 255, 0.18); backdrop-filter: blur(12px); }
-    .hero-flag { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.85; }
-    .section-card { border-radius: 1.75rem; box-shadow: 0 32px 90px rgba(15, 23, 42, 0.08); }
-    .card-glass { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(18px); border: 1px solid rgba(226, 232, 240, 0.72); }
-    .section-heading { position: relative; padding-bottom: 0.75rem; margin-bottom: 1.9rem; }
-    .section-heading::after { content: ""; position: absolute; bottom: 0; left: 0; width: 4.5rem; height: 4px; border-radius: 999px; background: #2563eb; }
-    .highlight-card { border: none; border-radius: 1.5rem; background: #ffffff; box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08); }
-    .highlight-card h3 { font-size: 1.18rem; margin-bottom: 0.8rem; }
-    .highlight-card p { opacity: 0.82; line-height: 1.75; }
-    .metric-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #dbeafe; box-shadow: 0 18px 45px rgba(15, 23, 42, 0.06); }
-    .metric-value { font-size: 2rem; font-weight: 700; color: #0f172a; }
-    .metric-label { font-size: 0.95rem; color: #475569; }
-    .metric-change { color: #16a34a; font-weight: 700; }
-    .feature-item { display: flex; gap: 1rem; align-items: flex-start; }
-    .feature-icon { width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: 1rem; background: #e0f2fe; color: #1d4ed8; font-weight: 700; }
-    .timeline-step { padding: 1.5rem; border-radius: 1.4rem; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05); }
-    .timeline-step h4 { font-size: 1.05rem; margin-bottom: 0.65rem; }
-    .timeline-step p { margin-bottom: 0; color: #475569; line-height: 1.7; }
-    .benefit-pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.7rem 0.95rem; border-radius: 999px; background: #e0f2fe; color: #1d4ed8; font-weight: 700; font-size: 0.92rem; }
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #eef5ff; color: #0f172a; padding-top: 78px; }
+    .fixed-navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
+    .hero-section { background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #2563eb 100%); color: white; padding: 72px 20px 50px; }
+    .hero-title { font-size: clamp(2.5rem, 4vw, 4.5rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.04em; }
+    .hero-text { font-size: 1.05rem; max-width: 680px; opacity: 0.92; line-height: 1.75; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1rem; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #dbeafe; }
+    .section-card { border-radius: 1.5rem; background: white; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); border: 1px solid rgba(148, 163, 184, 0.15); }
+    .section-heading { position: relative; padding-bottom: 0.75rem; margin-bottom: 1.75rem; }
+    .section-heading::after { content: ""; position: absolute; bottom: 0; left: 0; width: 5rem; height: 4px; border-radius: 999px; background: #2563eb; }
+    .metric-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #dbeafe; box-shadow: 0 18px 40px rgba(15,23,42,0.06); }
+    .metric-label { font-size: 0.95rem; color: #475569; margin-bottom: 0.75rem; }
+    .metric-value { font-size: 2.15rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .metric-note { color: #475569; line-height: 1.7; }
+    .info-pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 0.95rem; border-radius: 999px; background: #e0f2fe; color: #1d4ed8; font-weight: 700; font-size: 0.92rem; }
+    .highlight-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06); }
+    .chart-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05); }
     .footer-soft { background: #ffffff; border-top: 1px solid #e2e8f0; }
     .text-muted-soft { color: #475569; }
-    .badge-soft { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1rem; border-radius: 999px; background: #e0f2fe; color: #1d4ed8; font-weight: 700; }
-    .chart-card { background: #ffffff; border-radius: 1.5rem; border: 1px solid #e2e8f0; }
-    .footer p { margin-bottom: 0; }
-    a.nav-link { transition: color 0.2s ease; }
-    a.nav-link:hover { color: #bfdbfe !important; }
-    .btn-outline-light { border-color: rgba(255,255,255,0.4); }
-    .btn-outline-light:hover { color: #102a43; background: rgba(255,255,255,0.95); }
-    @media (max-width: 767px) {
-      header { padding-top: 100px; padding-bottom: 40px; }
-      .hero-title { font-size: 2.6rem; }
-      body { padding-top: 90px; }
-    }
+    .nav-link { transition: color 0.2s ease; }
+    .nav-link:hover { color: #bfdbfe !important; }
+    @media (max-width: 767px) { body { padding-top: 90px; } }
   </style>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark fixed-navbar">
     <div class="container-fluid px-4">
-      <a class="navbar-brand fw-semibold" href="#">Dashboard tài chính</a>
+      <a class="navbar-brand fw-semibold" href="#">Báo cáo tài chính</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNavbar">
         <div class="navbar-nav ms-auto">
           <a class="nav-link text-white px-3" href="#overview">Tổng quan</a>
-          <a class="nav-link text-white px-3" href="#kpis">KPIs</a>
-          <a class="nav-link text-white px-3" href="#charts">Biểu đồ</a>
-          <a class="nav-link text-white px-3" href="#insights">Nhận định</a>
-          <a class="nav-link text-white px-3" href="#actions">Hành động</a>
+          <a class="nav-link text-white px-3" href="#balance-sheet">Bảng cân đối</a>
+          <a class="nav-link text-white px-3" href="#income-statement">KQKD</a>
+          <a class="nav-link text-white px-3" href="#cashflow">Dòng tiền</a>
+          <a class="nav-link text-white px-3" href="#equity">Vốn</a>
+          <a class="nav-link text-white px-3" href="#notes">Ghi chú</a>
+          <a class="nav-link text-white px-3" href="#ratios">Chỉ số</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <header>
+  <header class="hero-section">
     <div class="container">
       <div class="row align-items-center gy-5">
-        <div class="col-xl-6 col-lg-7">
-          <span class="hero-badge hero-flag mb-3">Dashboard tài chính</span>
-          <h1 class="hero-title">Bảng điều khiển phân tích tài chính doanh nghiệp</h1>
-          <p class="hero-text mt-4">Một không gian trực quan để đánh giá hiệu quả kinh doanh, luồng tiền và các chỉ số tài chính quan trọng theo quý.</p>
-          <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 mt-4">
-            <a href="#overview" class="btn btn-lg btn-light text-primary px-4">Xem tổng quan</a>
-            <a href="financial-report.md" class="btn btn-lg btn-outline-light px-4">Xem báo cáo chi tiết</a>
-          </div>
-          <div class="mt-4 text-white-75">
-            <strong>Tiện ích:</strong> giám sát chỉ số, so sánh kỳ, xác định điểm trọng yếu, và đề xuất hành động.
+        <div class="col-lg-7">
+          <span class="hero-pill">Báo cáo tài chính theo từng phần</span>
+          <h1 class="hero-title mt-4">Tổng hợp mọi phần của báo cáo tài chính trong một trang</h1>
+          <p class="hero-text mt-4">Xem rõ cấu trúc bảng cân đối kế toán, báo cáo kết quả hoạt động, báo cáo lưu chuyển tiền tệ, thay đổi vốn chủ sở hữu và các ghi chú quan trọng.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+            <a href="#balance-sheet" class="btn btn-lg btn-light text-primary px-4">Xem bảng cân đối</a>
+            <a href="#income-statement" class="btn btn-lg btn-outline-light px-4">Xem KQKD</a>
           </div>
         </div>
-        <div class="col-xl-5 col-lg-5 offset-xl-1">
-          <div class="section-card card-glass p-4">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div>
-                <h5 class="mb-1 text-white">Tình hình hiện tại</h5>
-                <p class="mb-0 text-white-75">Đánh giá nhanh các chỉ số trọng yếu trong kỳ.</p>
-              </div>
-              <span class="badge-soft">Q2 2026</span>
-            </div>
+        <div class="col-lg-5">
+          <div class="section-card p-4">
+            <h5 class="mb-4">Tổng quan nhanh</h5>
             <div class="row g-3">
               <div class="col-6">
-                <div class="p-3 rounded-4 bg-white text-center">
-                  <div class="text-muted-soft">Doanh thu</div>
-                  <div class="metric-value text-primary">+21.5%</div>
+                <div class="metric-card p-3 text-center">
+                  <div class="metric-label">Doanh thu</div>
+                  <div class="metric-value text-primary">35.4T</div>
+                  <div class="text-muted-soft">+21.5% so với Q1</div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="p-3 rounded-4 bg-white text-center">
-                  <div class="text-muted-soft">Lợi nhuận</div>
-                  <div class="metric-value text-success">+14.8%</div>
+                <div class="metric-card p-3 text-center">
+                  <div class="metric-label">Lợi nhuận</div>
+                  <div class="metric-value text-success">5.2T</div>
+                  <div class="text-muted-soft">Biên 14.8%</div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="p-3 rounded-4 bg-white text-center">
-                  <div class="text-muted-soft">ROE</div>
-                  <div class="metric-value text-warning">12.7%</div>
+                <div class="metric-card p-3 text-center">
+                  <div class="metric-label">Dòng tiền</div>
+                  <div class="metric-value text-info">+8.1T</div>
+                  <div class="text-muted-soft">Dương</div>
                 </div>
               </div>
               <div class="col-6">
-                <div class="p-3 rounded-4 bg-white text-center">
-                  <div class="text-muted-soft">Thanh khoản</div>
-                  <div class="metric-value text-info">1.92x</div>
+                <div class="metric-card p-3 text-center">
+                  <div class="metric-label">Nợ vay</div>
+                  <div class="metric-value text-warning">18.4T</div>
+                  <div class="text-muted-soft">Ổn định</div>
                 </div>
               </div>
             </div>
@@ -124,181 +103,249 @@
 
   <main class="container py-5">
     <section id="overview" class="mb-5">
+      <div class="section-heading"><h2>Tổng quan cấu trúc báo cáo tài chính</h2></div>
       <div class="row g-4">
-        <div class="col-lg-8">
-          <div class="section-card p-4 h-100">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div>
-                <h2>Tổng quan hiệu suất</h2>
-                <p class="text-muted-soft mb-0">Các chỉ số chính của doanh nghiệp trong kỳ.</p>
-              </div>
-              <span class="badge-soft">Tăng trưởng</span>
-            </div>
-            <div class="row g-3">
-              <div class="col-sm-6">
-                <div class="metric-card p-4 h-100">
-                  <div class="metric-label">Doanh thu</div>
-                  <div class="metric-value">35.4 tỷ</div>
-                  <p class="text-muted-soft mb-0">So với cùng kỳ năm trước: +21.5%</p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="metric-card p-4 h-100">
-                  <div class="metric-label">Lợi nhuận sau thuế</div>
-                  <div class="metric-value">5.2 tỷ</div>
-                  <p class="text-muted-soft mb-0">Biên lợi nhuận ròng: 14.8%</p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="metric-card p-4 h-100">
-                  <div class="metric-label">Dòng tiền hoạt động</div>
-                  <div class="metric-value">+8.1 tỷ</div>
-                  <p class="text-muted-soft mb-0">Ổn định, có dư địa tái đầu tư.</p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="metric-card p-4 h-100">
-                  <div class="metric-label">Nợ vay</div>
-                  <div class="metric-value">18.4 tỷ</div>
-                  <p class="text-muted-soft mb-0">Tỷ lệ nợ/vốn hợp lý.</p>
-                </div>
-              </div>
-            </div>
+        <div class="col-lg-4">
+          <div class="highlight-card p-4 h-100">
+            <h3>Bảng cân đối kế toán</h3>
+            <p class="text-muted-soft">Thể hiện tài sản và nguồn vốn tại một thời điểm cụ thể.</p>
           </div>
         </div>
         <div class="col-lg-4">
-          <div class="section-card p-4 h-100">
-            <h2 class="mb-3">Thông tin nhanh</h2>
-            <ul class="list-unstyled text-muted-soft">
-              <li class="mb-3"><strong>Thời gian phân tích:</strong> Q2 2026</li>
-              <li class="mb-3"><strong>Đối tượng:</strong> Doanh nghiệp vừa và nhỏ</li>
-              <li class="mb-3"><strong>Ưu tiên:</strong> dòng tiền và lợi nhuận</li>
-              <li><strong>Hướng đề xuất:</strong> cải thiện biên lợi nhuận, kiểm soát tồn kho</li>
-            </ul>
+          <div class="highlight-card p-4 h-100">
+            <h3>Báo cáo kết quả hoạt động</h3>
+            <p class="text-muted-soft">Ghi nhận doanh thu, chi phí và lợi nhuận trong kỳ.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="highlight-card p-4 h-100">
+            <h3>Báo cáo lưu chuyển tiền tệ</h3>
+            <p class="text-muted-soft">Mô tả luồng tiền từ hoạt động kinh doanh, đầu tư và tài chính.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 mt-3">
+        <div class="col-lg-6">
+          <div class="highlight-card p-4 h-100">
+            <h3>Thay đổi vốn chủ sở hữu</h3>
+            <p class="text-muted-soft">Theo dõi nguồn vốn, lợi nhuận giữ lại và cổ tức.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="highlight-card p-4 h-100">
+            <h3>Ghi chú thuyết minh</h3>
+            <p class="text-muted-soft">Giải thích phương pháp, chính sách kế toán và các khoản mục quan trọng.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="kpis" class="mb-5">
-      <div class="section-heading">
-        <h2>KPIs quan trọng</h2>
+    <section id="balance-sheet" class="mb-5">
+      <div class="section-heading"><h2>Bảng cân đối kế toán</h2></div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="section-card p-4 h-100">
+            <h3>1. Tài sản</h3>
+            <ul class="list-unstyled text-muted-soft">
+              <li class="mb-2"><strong>Tài sản ngắn hạn:</strong> Tiền mặt, phải thu, hàng tồn kho.</li>
+              <li class="mb-2"><strong>Tài sản dài hạn:</strong> Tài sản cố định, đầu tư dài hạn.</li>
+              <li><strong>Tổng tài sản:</strong> Là thước đo quy mô tài sản doanh nghiệp.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="section-card p-4 h-100">
+            <h3>2. Nguồn vốn & nợ</h3>
+            <ul class="list-unstyled text-muted-soft">
+              <li class="mb-2"><strong>Nợ ngắn hạn:</strong> Nợ phải trả trong vòng 12 tháng.</li>
+              <li class="mb-2"><strong>Nợ dài hạn:</strong> Vay dài hạn, trái phiếu.</li>
+              <li><strong>Vốn chủ sở hữu:</strong> Vốn góp + lợi nhuận giữ lại.</li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <div class="row g-4 mt-4">
+        <div class="col-md-4">
+          <div class="metric-card p-4 text-center">
+            <div class="metric-label">Tài sản</div>
+            <div class="metric-value">52.8T</div>
+            <div class="metric-note">Tổng giá trị tài sản trong kỳ.</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric-card p-4 text-center">
+            <div class="metric-label">Nợ phải trả</div>
+            <div class="metric-value">18.4T</div>
+            <div class="metric-note">Nợ ngắn hạn và dài hạn tổng hợp.</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="metric-card p-4 text-center">
+            <div class="metric-label">Vốn chủ sở hữu</div>
+            <div class="metric-value">34.4T</div>
+            <div class="metric-note">Nguồn vốn của cổ đông và lợi nhuận giữ lại.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="income-statement" class="mb-5">
+      <div class="section-heading"><h2>Báo cáo kết quả hoạt động</h2></div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="section-card p-4 h-100">
+            <h3>Doanh thu và lợi nhuận</h3>
+            <p class="text-muted-soft">Theo dõi nguồn thu, chi phí và lợi nhuận riêng biệt giúp đánh giá hiệu quả kinh doanh.</p>
+            <ul class="list-unstyled text-muted-soft">
+              <li class="mb-2"><strong>Doanh thu thuần:</strong> Thu nhập sau khấu trừ giảm giá, chiết khấu.</li>
+              <li class="mb-2"><strong>Giá vốn hàng bán:</strong> Chi phí trực tiếp tạo ra doanh thu.</li>
+              <li class="mb-2"><strong>Lợi nhuận gộp:</strong> Doanh thu thuần - giá vốn.</li>
+              <li class="mb-2"><strong>Chi phí hoạt động:</strong> Bán hàng và quản lý doanh nghiệp.</li>
+              <li><strong>Lợi nhuận sau thuế:</strong> Kết quả cuối kỳ sau khi trừ thuế.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="chart-card p-4 h-100">
+            <h4 class="mb-3">Các khoản chính</h4>
+            <div class="ratio ratio-4x3 rounded-4 overflow-hidden border">
+              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ thanh KQKD">
+                <rect width="400" height="300" fill="#f8fafc" />
+                <rect x="60" y="90" width="70" height="160" fill="#2563eb" />
+                <rect x="160" y="120" width="70" height="130" fill="#f97316" />
+                <rect x="260" y="150" width="70" height="100" fill="#16a34a" />
+                <text x="95" y="280" fill="#475569" font-size="12" text-anchor="middle">Doanh thu</text>
+                <text x="195" y="280" fill="#475569" font-size="12" text-anchor="middle">Chi phí</text>
+                <text x="295" y="280" fill="#475569" font-size="12" text-anchor="middle">Lợi nhuận</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cashflow" class="mb-5">
+      <div class="section-heading"><h2>Báo cáo lưu chuyển tiền tệ</h2></div>
       <div class="row g-4">
         <div class="col-lg-4">
           <div class="metric-card p-4 h-100">
-            <div class="metric-label">ROE</div>
-            <div class="metric-value">12.7%</div>
-            <p class="text-muted-soft mb-0">Hiệu suất sinh lời trên vốn chủ sở hữu.</p>
+            <div class="metric-label">Dòng tiền hoạt động</div>
+            <div class="metric-value text-success">+9.6T</div>
+            <div class="metric-note">Tiền tạo ra từ hoạt động kinh doanh chính.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="metric-card p-4 h-100">
+            <div class="metric-label">Dòng tiền đầu tư</div>
+            <div class="metric-value text-danger">-3.8T</div>
+            <div class="metric-note">Chi phí mua sắm tài sản, đầu tư dài hạn.</div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="metric-card p-4 h-100">
+            <div class="metric-label">Dòng tiền tài chính</div>
+            <div class="metric-value text-warning">+2.3T</div>
+            <div class="metric-note">Vay nợ, trả nợ, cổ tức.</div>
+          </div>
+        </div>
+      </div>
+      <div class="section-card p-4 mt-4">
+        <h3>Ý nghĩa</h3>
+        <p class="text-muted-soft">Dòng tiền hoạt động dương cho thấy doanh nghiệp thực sự tạo ra tiền mặt. Dòng tiền đầu tư âm là tín hiệu doanh nghiệp đang mở rộng hoặc mua sắm tài sản.</p>
+      </div>
+    </section>
+
+    <section id="equity" class="mb-5">
+      <div class="section-heading"><h2>Thay đổi vốn chủ sở hữu</h2></div>
+      <div class="section-card p-4">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="highlight-card p-4 h-100">
+              <h4>Vốn góp</h4>
+              <p class="text-muted-soft">Vốn đầu vào của cổ đông, phản ánh năng lực huy động vốn.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="highlight-card p-4 h-100">
+              <h4>Lợi nhuận giữ lại</h4>
+              <p class="text-muted-soft">Phần lợi nhuận không chia cổ tức, bổ sung vốn cho hoạt động.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <div class="info-pill">Lưu ý:</div>
+          <p class="mt-3 text-muted-soft">Tăng vốn chủ sở hữu giúp cải thiện khả năng chịu đựng rủi ro và tăng tín nhiệm vay vốn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="notes" class="mb-5">
+      <div class="section-heading"><h2>Ghi chú thuyết minh</h2></div>
+      <div class="section-card p-4">
+        <p class="text-muted-soft">Ghi chú là phần quan trọng giúp giải thích phương pháp kế toán, các giả định ước tính và các sự kiện tài chính đặc biệt.</p>
+        <div class="row g-4 mt-4">
+          <div class="col-md-6">
+            <div class="highlight-card p-4 h-100">
+              <h4>Chính sách kế toán</h4>
+              <p class="text-muted-soft">Ghi rõ phương pháp ghi nhận doanh thu, khấu hao, đánh giá hàng tồn kho.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="highlight-card p-4 h-100">
+              <h4>Rủi ro & ước tính</h4>
+              <p class="text-muted-soft">Giải thích giả định về dự phòng nợ xấu, tồn kho và chi phí bảo hành.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ratios" class="mb-5">
+      <div class="section-heading"><h2>Chỉ số tài chính</h2></div>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="metric-card p-4 h-100">
+            <div class="metric-label">Hệ số thanh toán hiện hành</div>
+            <div class="metric-value">1.72x</div>
+            <p class="metric-note">Tài sản ngắn hạn / nợ ngắn hạn.</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="metric-card p-4 h-100">
             <div class="metric-label">ROA</div>
             <div class="metric-value">8.3%</div>
-            <p class="text-muted-soft mb-0">Hiệu quả sử dụng tài sản.</p>
+            <p class="metric-note">Lợi nhuận sau thuế / tổng tài sản.</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="metric-card p-4 h-100">
-            <div class="metric-label">Hệ số thanh toán nhanh</div>
-            <div class="metric-value">1.48x</div>
-            <p class="text-muted-soft mb-0">Khả năng trả nợ ngắn hạn.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="charts" class="mb-5">
-      <div class="section-heading">
-        <h2>Biểu đồ hiệu suất</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-xl-6">
-          <div class="chart-card p-4 h-100">
-            <h3 class="mb-3">Doanh thu & lợi nhuận theo quý</h3>
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
-              <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ doanh thu và lợi nhuận theo quý">
-                <rect x="0" y="0" width="800" height="450" fill="#f8fafc"/>
-                <g stroke="#e2e8f0" stroke-width="1"><line x1="100" y1="50" x2="100" y2="400"/><line x1="100" y1="400" x2="760" y2="400"/></g>
-                <polyline points="100,360 180,330 260,300 340,250 420,220 500,190 580,170 660,150" fill="none" stroke="#2563eb" stroke-width="4"/>
-                <polyline points="100,380 180,360 260,340 340,330 420,310 500,290 580,270 660,260" fill="none" stroke="#ef4444" stroke-width="4"/>
-                <g fill="#111827" font-size="12" font-family="Inter, sans-serif"><text x="100" y="425">Q1</text><text x="180" y="425">Q2</text><text x="260" y="425">Q3</text><text x="340" y="425">Q4</text><text x="420" y="425">Q1'</text><text x="500" y="425">Q2'</text><text x="580" y="425">Q3'</text><text x="660" y="425">Q4'</text></g>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="chart-card p-4 h-100">
-            <h3 class="mb-3">Phân bố chi phí</h3>
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
-              <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ chi phí">
-                <rect x="0" y="0" width="800" height="450" fill="#f8fafc"/>
-                <circle cx="400" cy="230" r="140" fill="#c7d2fe"/>
-                <path d="M400,230 L540,150 A140,140 0 0,1 340,80 Z" fill="#2563eb"/>
-                <path d="M400,230 L340,80 A140,140 0 0,1 250,250 Z" fill="#f97316"/>
-                <path d="M400,230 L250,250 A140,140 0 0,1 520,360 Z" fill="#16a34a"/>
-                <g fill="#111827" font-size="14"><text x="560" y="150">Bán hàng</text><text x="560" y="180">35%</text><text x="560" y="230">Quản lý</text><text x="560" y="260">25%</text><text x="560" y="310">Vận hành</text><text x="560" y="340">40%</text></g>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="insights" class="mb-5">
-      <div class="section-heading">
-        <h2>Nhận định chính</h2>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Đà tăng doanh thu</h3>
-            <p>Doanh thu tiếp tục tăng mạnh, cho thấy chiến lược bán hàng đang có hiệu quả tốt.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Chi phí cần kiểm soát</h3>
-            <p>Biên lợi nhuận đang bị thu hẹp do chi phí quản lý và marketing.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Dòng tiền là điểm mạnh</h3>
-            <p>Dòng tiền hoạt động tích cực cho phép doanh nghiệp tiêu dùng và đầu tư linh hoạt.</p>
+            <div class="metric-label">ROE</div>
+            <div class="metric-value">12.7%</div>
+            <p class="metric-note">Lợi nhuận sau thuế / vốn chủ sở hữu.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section id="actions" class="mb-5">
-      <div class="section-heading">
-        <h2>Kế hoạch hành động</h2>
-      </div>
+      <div class="section-heading"><h2>Đề xuất hành động</h2></div>
       <div class="row g-4">
-        <div class="col-md-6">
-          <div class="timeline-step">
-            <h4>1. Tối ưu chi phí</h4>
-            <p>Rà soát chi phí bán hàng và hành chính để cải thiện biên lợi nhuận.</p>
+        <div class="col-lg-4">
+          <div class="highlight-card p-4 h-100">
+            <h4>1. Tăng cường thu hồi nợ</h4>
+            <p class="text-muted-soft">Giảm nợ xấu và tăng dòng tiền hoạt động.</p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="timeline-step">
-            <h4>2. Tăng cường dòng tiền</h4>
-            <p>Ưu tiên thu hồi nợ và quản lý tồn kho để tăng thanh khoản.</p>
+        <div class="col-lg-4">
+          <div class="highlight-card p-4 h-100">
+            <h4>2. Kiểm soát chi phí</h4>
+            <p class="text-muted-soft">Rà soát chi phí bán hàng và quản lý để cải thiện biên lợi nhuận.</p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="timeline-step">
-            <h4>3. So sánh chuẩn ngành</h4>
-            <p>Đối chiếu tỷ lệ với ngành để xác định vị trí cạnh tranh.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="timeline-step">
-            <h4>4. Đề xuất báo cáo</h4>
-            <p>Chuẩn bị báo cáo ngắn gọn, tập trung số liệu chính và hành động tiếp theo.</p>
+        <div class="col-lg-4">
+          <div class="highlight-card p-4 h-100">
+            <h4>3. Nâng cao dòng tiền</h4>
+            <p class="text-muted-soft">Tập trung vào hoạt động kinh doanh tạo tiền mặt và hạn chế đầu tư bất hợp lý.</p>
           </div>
         </div>
       </div>
@@ -307,7 +354,7 @@
 
   <footer class="footer-soft py-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-      <p class="text-muted mb-0">Dashboard phân tích tài chính dành cho báo cáo và thuyết trình.</p>
+      <p class="text-muted mb-0">Website trình bày báo cáo tài chính theo từng phần, phù hợp cho báo cáo và phân tích nội bộ.</p>
       <div class="d-flex gap-2">
         <a href="financial-report.md" class="btn btn-outline-primary btn-sm">Markdown</a>
         <a href="https://github.com/lhcutis1tg-blip/Baitaplon_Python" target="_blank" class="text-decoration-none text-primary">Xem repo</a>
