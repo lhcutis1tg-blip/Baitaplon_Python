@@ -17,3 +17,4 @@ Trang trình bày:
 - Quy trình phân tích
 - Ví dụ minh họa
 - Kết luận
+- Phiên bản Markdown: `financial-report.md`

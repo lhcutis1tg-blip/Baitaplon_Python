@@ -3,82 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phân tích báo cáo tài chính doanh nghiệp</title>
+  <title>Báo cáo tài chính doanh nghiệp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5ad69TQa+oC0hbiQXg1dpj9FDKkBd4a2zYSXHgcz/CHClmafE3dE/2a0LzjE2ZFS" crossorigin="anonymous">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; padding: 0; background: #f5f7fb; color: #1f2937; }
-    header { background: #1f4e79; color: white; padding: 32px 24px; text-align: center; }
-    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
-    h1, h2, h3 { margin-top: 1.6em; }
-    p { line-height: 1.75; }
-    .card { background: white; border-radius: 16px; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08); padding: 24px; margin-top: 24px; }
-    ul { margin-left: 1.2em; }
-    footer { margin-top: 40px; padding: 20px 24px; text-align: center; color: #6b7280; }
-    code { background: #eef2ff; padding: 2px 6px; border-radius: 4px; }
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #eef2ff; color: #111827; }
+    header { background: linear-gradient(135deg, #1d4ed8, #2563eb); color: white; padding: 50px 20px; }
+    header h1 { font-size: clamp(2.25rem, 4vw, 3.5rem); margin-bottom: 0.5rem; }
+    header p { font-size: 1.05rem; max-width: 760px; margin: 0 auto; opacity: 0.9; }
+    nav a { color: white; text-decoration: none; }
+    .section-card { border-radius: 1.5rem; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); }
+    .badge-custom { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1rem; border-radius: 999px; background: #e0f2fe; color: #0369a1; font-weight: 700; }
+    pre code { background: #eef2ff; padding: 0.3rem 0.5rem; border-radius: 0.5rem; }
+    footer { margin-top: 40px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Phân tích báo cáo tài chính doanh nghiệp</h1>
-    <p>Hướng dẫn cơ bản để đọc, đánh giá và ra quyết định dựa trên báo cáo tài chính.</p>
+  <header class="text-center">
+    <div class="container">
+      <h1>Báo cáo tài chính doanh nghiệp</h1>
+      <p>Trang trình bày cách đọc, phân tích và sử dụng số liệu tài chính để đánh giá hiệu quả hoạt động của doanh nghiệp.</p>
+      <nav class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+        <a href="#what" class="btn btn-outline-light btn-sm">Báo cáo</a>
+        <a href="#ratios" class="btn btn-outline-light btn-sm">Chỉ số</a>
+        <a href="#charts" class="btn btn-outline-light btn-sm">Biểu đồ</a>
+        <a href="#process" class="btn btn-outline-light btn-sm">Quy trình</a>
+        <a href="#advice" class="btn btn-outline-light btn-sm">Lời khuyên</a>
+      </nav>
+    </div>
   </header>
-  <main class="container">
-    <section class="card">
-      <h2>1. Mục tiêu của phân tích</h2>
-      <p>Phân tích báo cáo tài chính nhằm đánh giá tình hình hoạt động, khả năng sinh lời, thanh khoản và rủi ro của doanh nghiệp. Kết quả giúp nhà quản lý, nhà đầu tư và đối tác đưa ra quyết định đúng đắn.</p>
+
+  <main class="container py-5">
+    <section class="section-card p-4 p-md-5 bg-white">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h2 class="mb-3">Giới thiệu</h2>
+          <p>Trong doanh nghiệp, báo cáo tài chính là nguồn dữ liệu quan trọng nhất để đánh giá sức khỏe kinh doanh. Một phân tích chuẩn giúp nhận diện cơ hội tăng trưởng và hạn chế rủi ro tài chính.</p>
+          <div class="p-4 rounded-4 bg-primary bg-opacity-10">
+            <p class="mb-0"><strong>Điểm cần nhớ:</strong> phân tích tài chính không chỉ tập trung vào lợi nhuận, mà còn bao gồm thanh khoản, hiệu quả vốn và chất lượng dòng tiền.</p>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+          <svg width="100%" height="auto" viewBox="0 0 420 330" xmlns="http://www.w3.org/2000/svg" class="rounded-4 border" style="background:#f8fafc;">
+            <rect width="420" height="330" fill="#f8fafc" rx="24"/>
+            <path d="M40 280 L40 40 L380 40" stroke="#cbd5e1" stroke-width="2" fill="none" />
+            <path d="M40 240 L100 210 L160 190 L220 160 L280 140 L340 120" stroke="#2563eb" stroke-width="5" fill="none" stroke-linecap="round" />
+            <path d="M40 260 L100 240 L160 225 L220 210 L280 195 L340 185" stroke="#ef4444" stroke-width="5" fill="none" stroke-linecap="round" />
+            <path d="M40 270 L100 250 L160 235 L220 220 L280 205 L340 195" stroke="#16a34a" stroke-width="5" fill="none" stroke-linecap="round" />
+            <text x="40" y="310" font-size="14" fill="#475569">Q1</text>
+            <text x="95" y="310" font-size="14" fill="#475569">Q2</text>
+            <text x="155" y="310" font-size="14" fill="#475569">Q3</text>
+            <text x="215" y="310" font-size="14" fill="#475569">Q4</text>
+            <text x="277" y="310" font-size="14" fill="#475569">Q1'</text>
+            <text x="337" y="310" font-size="14" fill="#475569">Q2'</text>
+            <circle cx="340" cy="120" r="6" fill="#2563eb" />
+            <circle cx="340" cy="185" r="6" fill="#ef4444" />
+            <circle cx="340" cy="195" r="6" fill="#16a34a" />
+            <text x="60" y="70" fill="#2563eb" font-size="14">Doanh thu</text>
+            <text x="60" y="90" fill="#ef4444" font-size="14">Chi phí</text>
+            <text x="60" y="110" fill="#16a34a" font-size="14">Lợi nhuận</text>
+          </svg>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>2. Các loại báo cáo tài chính chính</h2>
-      <ul>
-        <li><strong>Bảng cân đối kế toán</strong>: Thể hiện tài sản, nợ phải trả và vốn chủ sở hữu tại một thời điểm nhất định.</li>
-        <li><strong>Báo cáo kết quả hoạt động kinh doanh</strong>: Cho biết doanh thu, chi phí và lợi nhuận trong kỳ.</li>
-        <li><strong>Báo cáo lưu chuyển tiền tệ</strong>: Hiển thị dòng tiền từ hoạt động kinh doanh, đầu tư và tài chính.</li>
-      </ul>
+    <section id="what" class="section-card p-4 p-md-5 bg-white mt-5">
+      <h2>1. Các báo cáo tài chính chính</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 h-100">
+            <h3>Bảng cân đối kế toán</h3>
+            <p>Thể hiện tài sản, nguồn vốn và nợ phải trả tại một thời điểm. Đây là bức tranh tĩnh về cấu trúc vốn của doanh nghiệp.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 h-100">
+            <h3>Báo cáo kết quả hoạt động</h3>
+            <p>Ghi nhận doanh thu, chi phí và lợi nhuận trong kỳ. Đây là chỉ số quan trọng để đánh giá hiệu suất kinh doanh.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 h-100">
+            <h3>Báo cáo lưu chuyển tiền tệ</h3>
+            <p>Phân tích dòng tiền từ hoạt động kinh doanh, đầu tư và tài chính. Giúp kiểm tra năng lực tạo và sử dụng tiền mặt của doanh nghiệp.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 border rounded-4 h-100">
+            <h3>Bản thuyết minh</h3>
+            <p>Cung cấp giải thích chi tiết về chính sách kế toán, các khoản mục đặc biệt và biến động lớn trong sổ sách.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>3. Các chỉ số phân tích quan trọng</h2>
-      <h3>3.1 Thanh khoản</h3>
-      <ul>
-        <li>Hệ số thanh toán hiện hành = <code>Tài sản ngắn hạn / Nợ ngắn hạn</code></li>
-        <li>Hệ số thanh toán nhanh = <code>(Tài sản ngắn hạn - Hàng tồn kho) / Nợ ngắn hạn</code></li>
-      </ul>
-      <h3>3.2 Hiệu quả hoạt động</h3>
-      <ul>
-        <li>Biên lợi nhuận gộp = <code>Lợi nhuận gộp / Doanh thu thuần</code></li>
-        <li>Vòng quay vốn lưu động = <code>Doanh thu / Vốn lưu động</code></li>
-      </ul>
-      <h3>3.3 Khả năng sinh lời</h3>
-      <ul>
-        <li>ROA = <code>Lợi nhuận ròng / Tổng tài sản</code></li>
-        <li>ROE = <code>Lợi nhuận sau thuế / Vốn chủ sở hữu</code></li>
-      </ul>
+    <section id="ratios" class="section-card p-4 p-md-5 bg-white mt-5">
+      <h2>2. Chỉ số tài chính quan trọng</h2>
+      <p class="mb-4">Những chỉ số sau đây giúp đánh giá doanh nghiệp từ nhiều khía cạnh khác nhau.</p>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Thanh khoản</h3>
+            <p>Kiểm tra khả năng doanh nghiệp trả nợ ngắn hạn.</p>
+            <ul>
+              <li>Hệ số thanh toán hiện hành</li>
+              <li>Hệ số thanh toán nhanh</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Khả năng sinh lời</h3>
+            <p>Đánh giá năng lực sinh lợi từ tài sản và vốn chủ sở hữu.</p>
+            <ul>
+              <li>ROA</li>
+              <li>ROE</li>
+              <li>Biên lợi nhuận ròng</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-4 border rounded-4 bg-white">
+        <h4>Ví dụ công thức</h4>
+        <pre><code>ROE = Lợi nhuận sau thuế / Vốn chủ sở hữu</code></pre>
+        <pre><code>Hệ số thanh toán nhanh = (Tài sản ngắn hạn - Hàng tồn kho) / Nợ ngắn hạn</code></pre>
+      </div>
     </section>
 
-    <section class="card">
+    <section id="charts" class="section-card p-4 p-md-5 bg-white mt-5">
+      <h2>3. Biểu đồ phân tích</h2>
+      <p class="mb-4">Biểu đồ dưới đây mô tả xu hướng doanh thu, chi phí và lợi nhuận theo thời gian.</p>
+      <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
+        <svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ doanh thu chi phí và lợi nhuận">
+          <rect x="0" y="0" width="800" height="450" fill="#f8fafc"/>
+          <g stroke="#e2e8f0" stroke-width="1">
+            <line x1="100" y1="50" x2="100" y2="400"/>
+            <line x1="100" y1="400" x2="760" y2="400"/>
+            <line x1="180" y1="400" x2="180" y2="390"/>
+            <line x1="260" y1="400" x2="260" y2="390"/>
+            <line x1="340" y1="400" x2="340" y2="390"/>
+            <line x1="420" y1="400" x2="420" y2="390"/>
+            <line x1="500" y1="400" x2="500" y2="390"/>
+            <line x1="580" y1="400" x2="580" y2="390"/>
+            <line x1="660" y1="400" x2="660" y2="390"/>
+          </g>
+          <polyline fill="none" stroke="#2563eb" stroke-width="4" points="100,360 180,320 260,290 340,250 420,210 500,200 580,170 660,150"/>
+          <polyline fill="none" stroke="#ef4444" stroke-width="4" points="100,380 180,360 260,340 340,330 420,310 500,290 580,270 660,260"/>
+          <polyline fill="none" stroke="#16a34a" stroke-width="4" points="100,390 180,370 260,350 340,330 420,300 500,280 580,260 660,240"/>
+          <g fill="#111827" font-size="14" font-family="Inter, sans-serif">
+            <text x="115" y="30">Doanh thu</text>
+            <text x="310" y="30">Chi phí</text>
+            <text x="520" y="30">Lợi nhuận</text>
+          </g>
+          <g fill="#475569" font-size="12" font-family="Inter, sans-serif">
+            <text x="100" y="420">Q1</text>
+            <text x="180" y="420">Q2</text>
+            <text x="260" y="420">Q3</text>
+            <text x="340" y="420">Q4</text>
+            <text x="420" y="420">Q1'</text>
+            <text x="500" y="420">Q2'</text>
+            <text x="580" y="420">Q3'</text>
+            <text x="660" y="420">Q4'</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section id="process" class="section-card p-4 p-md-5 bg-white mt-5">
       <h2>4. Quy trình phân tích</h2>
-      <ol>
-        <li>Thu thập báo cáo tài chính của kỳ hiện tại và các kỳ trước.</li>
-        <li>So sánh số liệu theo thời gian và so với chuẩn ngành.</li>
-        <li>Phân tích xu hướng, xác định điểm mạnh và vấn đề cần giải quyết.</li>
-        <li>Đánh giá rủi ro tài chính, khả năng thanh toán và chất lượng lợi nhuận.</li>
-        <li>Đề xuất biện pháp cải thiện hiệu quả và tối ưu vốn.</li>
+      <ol class="mt-3">
+        <li>Thu thập báo cáo của ít nhất 2-3 kỳ để xác định xu hướng.</li>
+        <li>So sánh với chuẩn ngành và đối thủ cạnh tranh.</li>
+        <li>Phân tích các biến động lớn: doanh thu, chi phí hoạt động, nợ vay.</li>
+        <li>Đánh giá dòng tiền, khả năng thanh toán và hiệu quả sử dụng vốn.</li>
+        <li>Viết nhận xét tóm tắt và đề xuất hành động cải thiện.</li>
       </ol>
     </section>
 
-    <section class="card">
-      <h2>5. Ví dụ minh họa</h2>
-      <p>Giả sử doanh nghiệp có <strong>biên lợi nhuận gộp thấp</strong> nhưng <strong>tăng trưởng doanh thu cao</strong>. Điều này có thể gợi ý cần cải thiện chuỗi cung ứng, giảm giá vốn hàng bán hoặc xem xét lại chiến lược giá.</p>
-      <p>Nếu <strong>hệ số thanh toán nhanh</strong> thấp, doanh nghiệp có thể gặp rủi ro về khả năng thanh toán ngay lập tức khi nợ ngắn hạn đáo hạn.</p>
-    </section>
-
-    <section class="card">
-      <h2>6. Kết luận</h2>
-      <p>Phân tích báo cáo tài chính không chỉ là đọc số liệu. Nó là quá trình kết hợp các chỉ số, bối cảnh ngành và chiến lược để đưa ra nhận định chính xác về sức khỏe doanh nghiệp và hướng phát triển bền vững.</p>
+    <section id="advice" class="section-card p-4 p-md-5 bg-white mt-5">
+      <h2>5. Lời khuyên cho doanh nghiệp</h2>
+      <div class="row g-4 mt-3">
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Giữ dòng tiền ổn định</h3>
+            <p>Dòng tiền mạnh tạo nền tảng vững chắc cho hoạt động kinh doanh và giảm rủi ro khi thị trường biến động.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Giảm chi phí không hiệu quả</h3>
+            <p>Đánh giá chi phí quản lý, bán hàng và marketing để tìm điểm tối ưu.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Quản lý hàng tồn kho</h3>
+            <p>Hàng tồn kho lớn có thể gây mất thanh khoản và tăng chi phí lưu kho. Quản lý hiệu quả giúp cải thiện thanh khoản.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 bg-light rounded-4 h-100">
+            <h3>Rà soát định kỳ</h3>
+            <p>Phân tích ít nhất mỗi quý để phát hiện sớm tín hiệu yếu và điều chỉnh kịp thời.</p>
+          </div>
+        </div>
+      </div>
+      <div class="badge-custom mt-4">Mục tiêu cuối cùng: hiểu rõ sức khỏe tài chính và đưa ra quyết định kinh doanh chính xác.</div>
     </section>
   </main>
-  <footer>
-    <p>Trang GitHub Pages: mô tả cơ bản về phân tích báo cáo tài chính doanh nghiệp.</p>
+
+  <footer class="section-card p-4 p-md-5 bg-white text-center">
+    <p class="mb-3">Website mô tả phân tích báo cáo tài chính doanh nghiệp. Phù hợp để trình bày kế hoạch, đề tài hoặc báo cáo học phần.</p>
+    <a href="financial-report.md" class="btn btn-primary btn-sm">Xem phiên bản Markdown</a>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OhbEzX4zqW3IcLH/O4w7h9E+fWo2UkPeRkE4r7N0CuokGJgnuOeMqv9Ba0TX7Y65" crossorigin="anonymous"></script>
 </body>
 </html>
