@@ -6,26 +6,31 @@
   <title>Báo cáo tài chính chuyên sâu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-5ad69TQa+oC0hbiQXg1dpj9FDKkBd4a2zYSXHgcz/CHClmafE3dE/2a0LzjE2ZFS" crossorigin="anonymous">
   <style>
-    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #eef5ff; color: #0f172a; padding-top: 78px; }
-    .fixed-navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; background: rgba(15, 23, 42, 0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(148, 163, 184, 0.18); }
-    .hero-section { background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 55%, #2563eb 100%); color: white; padding: 72px 20px 50px; }
+    body { font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f8f1de; color: #3f3620; padding-top: 78px; }
+    .fixed-navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; background: rgba(79, 63, 37, 0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(169, 146, 81, 0.22); }
+    .hero-section { background: linear-gradient(135deg, #7e6a3b 0%, #d9c58b 55%, #f3e5b5 100%); color: #2e2412; padding: 72px 20px 50px; }
     .hero-title { font-size: clamp(2.5rem, 4vw, 4.5rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.04em; }
-    .hero-text { font-size: 1.05rem; max-width: 680px; opacity: 0.92; line-height: 1.75; }
-    .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1rem; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); color: #dbeafe; }
-    .section-card { border-radius: 1.5rem; background: white; box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); border: 1px solid rgba(148, 163, 184, 0.15); }
+    .hero-text { font-size: 1.05rem; max-width: 680px; opacity: 0.95; line-height: 1.75; }
+    .hero-pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1rem; border-radius: 999px; background: rgba(255, 246, 211, 0.55); border: 1px solid rgba(255, 241, 196, 0.8); color: #6f542d; }
+    .section-card { border-radius: 1.5rem; background: #fff9ed; box-shadow: 0 24px 60px rgba(88, 75, 39, 0.08); border: 1px solid rgba(206, 188, 129, 0.35); }
     .section-heading { position: relative; padding-bottom: 0.75rem; margin-bottom: 1.75rem; }
-    .section-heading::after { content: ""; position: absolute; bottom: 0; left: 0; width: 5rem; height: 4px; border-radius: 999px; background: #2563eb; }
-    .metric-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #dbeafe; box-shadow: 0 18px 40px rgba(15,23,42,0.06); }
-    .metric-label { font-size: 0.95rem; color: #475569; margin-bottom: 0.75rem; }
+    .section-heading::after { content: ""; position: absolute; bottom: 0; left: 0; width: 5rem; height: 4px; border-radius: 999px; background: #9b7e3f; }
+    .metric-card { border-radius: 1.5rem; background: #fff8e8; border: 1px solid #f1d9a9; box-shadow: 0 18px 40px rgba(88,75,39,0.06); }
+    .metric-label { font-size: 0.95rem; color: #5c4f36; margin-bottom: 0.75rem; }
     .metric-value { font-size: 2.15rem; font-weight: 700; margin-bottom: 0.75rem; }
-    .metric-note { color: #475569; line-height: 1.7; }
-    .info-pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 0.95rem; border-radius: 999px; background: #e0f2fe; color: #1d4ed8; font-weight: 700; font-size: 0.92rem; }
-    .highlight-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06); }
-    .chart-card { border-radius: 1.5rem; background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05); }
-    .footer-soft { background: #ffffff; border-top: 1px solid #e2e8f0; }
-    .text-muted-soft { color: #475569; }
+    .metric-note { color: #6f5f46; line-height: 1.7; }
+    .info-pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 0.95rem; border-radius: 999px; background: #f7e7b5; color: #7a5c2f; font-weight: 700; font-size: 0.92rem; }
+    .highlight-card { border-radius: 1.5rem; background: #fff8e8; border: 1px solid #ecd7a8; box-shadow: 0 18px 38px rgba(88, 75, 39, 0.06); }
+    .chart-card { border-radius: 1.5rem; background: #fff8e8; border: 1px solid #ecd7a8; box-shadow: 0 18px 40px rgba(88, 75, 39, 0.05); }
+    .footer-soft { background: #fff8e8; border-top: 1px solid #ecd7a8; }
+    .text-muted-soft { color: #6f5f46; }
     .nav-link { transition: color 0.2s ease; }
-    .nav-link:hover { color: #bfdbfe !important; }
+    .nav-link:hover { color: #b48a3b !important; }
+    .sidebar { position: sticky; top: 100px; max-height: calc(100vh - 120px); overflow-y: auto; }
+    .sidebar .nav-link { color: #3f3620; font-weight: 500; }
+    .sidebar .nav-link:hover { color: #8f7027; }
+    .sidebar .section-heading { font-size: 0.9rem; margin-top: 1.25rem; text-transform: uppercase; letter-spacing: 0.04em; color: #7a5c2f; }
+    .navbar-dark .navbar-nav .nav-link { color: rgba(255,255,255,0.95); }
     @media (max-width: 767px) { body { padding-top: 90px; } }
   </style>
 </head>
@@ -42,9 +47,7 @@
           <a class="nav-link text-white px-3" href="#balance-sheet">Bảng cân đối</a>
           <a class="nav-link text-white px-3" href="#income-statement">KQKD</a>
           <a class="nav-link text-white px-3" href="#cashflow">Dòng tiền</a>
-          <a class="nav-link text-white px-3" href="#equity">Vốn</a>
-          <a class="nav-link text-white px-3" href="#notes">Ghi chú</a>
-          <a class="nav-link text-white px-3" href="#ratios">Chỉ số</a>
+          <a class="nav-link text-white px-3" href="#notes">Thuyết minh</a>
         </div>
       </div>
     </div>
@@ -58,8 +61,8 @@
           <h1 class="hero-title mt-4">Tổng hợp mọi phần của báo cáo tài chính trong một trang</h1>
           <p class="hero-text mt-4">Xem rõ cấu trúc bảng cân đối kế toán, báo cáo kết quả hoạt động, báo cáo lưu chuyển tiền tệ, thay đổi vốn chủ sở hữu và các ghi chú quan trọng.</p>
           <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-            <a href="#balance-sheet" class="btn btn-lg btn-light text-primary px-4">Xem bảng cân đối</a>
-            <a href="#income-statement" class="btn btn-lg btn-outline-light px-4">Xem KQKD</a>
+            <a href="#balance-sheet" class="btn btn-lg btn-light text-dark px-4" style="background:#f8e8b5; border-color:#e9d29a;">Xem bảng cân đối</a>
+            <a href="#income-statement" class="btn btn-lg btn-outline-dark px-4" style="border-color:#8f7027; color:#5b4422;">Xem KQKD</a>
           </div>
         </div>
         <div class="col-lg-5">
@@ -102,254 +105,169 @@
   </header>
 
   <main class="container py-5">
-    <section id="overview" class="mb-5">
-      <div class="section-heading"><h2>Tổng quan cấu trúc báo cáo tài chính</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Bảng cân đối kế toán</h3>
-            <p class="text-muted-soft">Thể hiện tài sản và nguồn vốn tại một thời điểm cụ thể.</p>
-          </div>
+    <div class="row">
+      <aside class="col-lg-3 mb-4 d-none d-lg-block">
+        <div class="section-card p-4 sidebar">
+          <h5 class="mb-3">Mục lục</h5>
+          <nav class="nav flex-column">
+            <a class="nav-link py-2" href="#overview">Tổng quan</a>
+            <div class="sidebar section-heading">Mục I</div>
+            <a class="nav-link ps-3 py-1" href="#balance-sheet">Bảng cân đối kế toán</a>
+            <a class="nav-link ps-4 py-1" href="#current-assets">1.1 Tài sản ngắn hạn</a>
+            <a class="nav-link ps-4 py-1" href="#long-term-assets">1.2 Tài sản dài hạn</a>
+            <a class="nav-link ps-4 py-1" href="#liabilities-equity">2. Nguồn vốn</a>
+            <div class="sidebar section-heading">Mục II</div>
+            <a class="nav-link ps-3 py-1" href="#income-statement">Báo cáo kết quả hoạt động</a>
+            <div class="sidebar section-heading">Mục III</div>
+            <a class="nav-link ps-3 py-1" href="#cashflow">Báo cáo lưu chuyển tiền tệ</a>
+            <div class="sidebar section-heading">Mục IV</div>
+            <a class="nav-link ps-3 py-1" href="#notes">Bản thuyết minh</a>
+          </nav>
         </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Báo cáo kết quả hoạt động</h3>
-            <p class="text-muted-soft">Ghi nhận doanh thu, chi phí và lợi nhuận trong kỳ.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h3>Báo cáo lưu chuyển tiền tệ</h3>
-            <p class="text-muted-soft">Mô tả luồng tiền từ hoạt động kinh doanh, đầu tư và tài chính.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row g-4 mt-3">
-        <div class="col-lg-6">
-          <div class="highlight-card p-4 h-100">
-            <h3>Thay đổi vốn chủ sở hữu</h3>
-            <p class="text-muted-soft">Theo dõi nguồn vốn, lợi nhuận giữ lại và cổ tức.</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="highlight-card p-4 h-100">
-            <h3>Ghi chú thuyết minh</h3>
-            <p class="text-muted-soft">Giải thích phương pháp, chính sách kế toán và các khoản mục quan trọng.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="balance-sheet" class="mb-5">
-      <div class="section-heading"><h2>Bảng cân đối kế toán</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="section-card p-4 h-100">
-            <h3>1. Tài sản</h3>
-            <ul class="list-unstyled text-muted-soft">
-              <li class="mb-2"><strong>Tài sản ngắn hạn:</strong> Tiền mặt, phải thu, hàng tồn kho.</li>
-              <li class="mb-2"><strong>Tài sản dài hạn:</strong> Tài sản cố định, đầu tư dài hạn.</li>
-              <li><strong>Tổng tài sản:</strong> Là thước đo quy mô tài sản doanh nghiệp.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="section-card p-4 h-100">
-            <h3>2. Nguồn vốn & nợ</h3>
-            <ul class="list-unstyled text-muted-soft">
-              <li class="mb-2"><strong>Nợ ngắn hạn:</strong> Nợ phải trả trong vòng 12 tháng.</li>
-              <li class="mb-2"><strong>Nợ dài hạn:</strong> Vay dài hạn, trái phiếu.</li>
-              <li><strong>Vốn chủ sở hữu:</strong> Vốn góp + lợi nhuận giữ lại.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row g-4 mt-4">
-        <div class="col-md-4">
-          <div class="metric-card p-4 text-center">
-            <div class="metric-label">Tài sản</div>
-            <div class="metric-value">52.8T</div>
-            <div class="metric-note">Tổng giá trị tài sản trong kỳ.</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="metric-card p-4 text-center">
-            <div class="metric-label">Nợ phải trả</div>
-            <div class="metric-value">18.4T</div>
-            <div class="metric-note">Nợ ngắn hạn và dài hạn tổng hợp.</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="metric-card p-4 text-center">
-            <div class="metric-label">Vốn chủ sở hữu</div>
-            <div class="metric-value">34.4T</div>
-            <div class="metric-note">Nguồn vốn của cổ đông và lợi nhuận giữ lại.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="income-statement" class="mb-5">
-      <div class="section-heading"><h2>Báo cáo kết quả hoạt động</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-7">
-          <div class="section-card p-4 h-100">
-            <h3>Doanh thu và lợi nhuận</h3>
-            <p class="text-muted-soft">Theo dõi nguồn thu, chi phí và lợi nhuận riêng biệt giúp đánh giá hiệu quả kinh doanh.</p>
-            <ul class="list-unstyled text-muted-soft">
-              <li class="mb-2"><strong>Doanh thu thuần:</strong> Thu nhập sau khấu trừ giảm giá, chiết khấu.</li>
-              <li class="mb-2"><strong>Giá vốn hàng bán:</strong> Chi phí trực tiếp tạo ra doanh thu.</li>
-              <li class="mb-2"><strong>Lợi nhuận gộp:</strong> Doanh thu thuần - giá vốn.</li>
-              <li class="mb-2"><strong>Chi phí hoạt động:</strong> Bán hàng và quản lý doanh nghiệp.</li>
-              <li><strong>Lợi nhuận sau thuế:</strong> Kết quả cuối kỳ sau khi trừ thuế.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="chart-card p-4 h-100">
-            <h4 class="mb-3">Các khoản chính</h4>
-            <div class="ratio ratio-4x3 rounded-4 overflow-hidden border">
-              <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Biểu đồ thanh KQKD">
-                <rect width="400" height="300" fill="#f8fafc" />
-                <rect x="60" y="90" width="70" height="160" fill="#2563eb" />
-                <rect x="160" y="120" width="70" height="130" fill="#f97316" />
-                <rect x="260" y="150" width="70" height="100" fill="#16a34a" />
-                <text x="95" y="280" fill="#475569" font-size="12" text-anchor="middle">Doanh thu</text>
-                <text x="195" y="280" fill="#475569" font-size="12" text-anchor="middle">Chi phí</text>
-                <text x="295" y="280" fill="#475569" font-size="12" text-anchor="middle">Lợi nhuận</text>
-              </svg>
+      </aside>
+      <div class="col-lg-9">
+        <section id="overview" class="mb-5">
+          <div class="section-heading"><h2>Tổng quan cấu trúc báo cáo tài chính</h2></div>
+          <div class="row g-4">
+            <div class="col-lg-4">
+              <div class="highlight-card p-4 h-100">
+                <h3>Bảng cân đối kế toán</h3>
+                <p class="text-muted-soft">Thể hiện tài sản và nguồn vốn tại một thời điểm cụ thể.</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="highlight-card p-4 h-100">
+                <h3>Báo cáo kết quả hoạt động</h3>
+                <p class="text-muted-soft">Ghi nhận doanh thu, chi phí và lợi nhuận trong kỳ.</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="highlight-card p-4 h-100">
+                <h3>Báo cáo lưu chuyển tiền tệ</h3>
+                <p class="text-muted-soft">Mô tả luồng tiền từ hoạt động kinh doanh, đầu tư và tài chính.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cashflow" class="mb-5">
-      <div class="section-heading"><h2>Báo cáo lưu chuyển tiền tệ</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">Dòng tiền hoạt động</div>
-            <div class="metric-value text-success">+9.6T</div>
-            <div class="metric-note">Tiền tạo ra từ hoạt động kinh doanh chính.</div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">Dòng tiền đầu tư</div>
-            <div class="metric-value text-danger">-3.8T</div>
-            <div class="metric-note">Chi phí mua sắm tài sản, đầu tư dài hạn.</div>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">Dòng tiền tài chính</div>
-            <div class="metric-value text-warning">+2.3T</div>
-            <div class="metric-note">Vay nợ, trả nợ, cổ tức.</div>
-          </div>
-        </div>
-      </div>
-      <div class="section-card p-4 mt-4">
-        <h3>Ý nghĩa</h3>
-        <p class="text-muted-soft">Dòng tiền hoạt động dương cho thấy doanh nghiệp thực sự tạo ra tiền mặt. Dòng tiền đầu tư âm là tín hiệu doanh nghiệp đang mở rộng hoặc mua sắm tài sản.</p>
-      </div>
-    </section>
-
-    <section id="equity" class="mb-5">
-      <div class="section-heading"><h2>Thay đổi vốn chủ sở hữu</h2></div>
-      <div class="section-card p-4">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="highlight-card p-4 h-100">
-              <h4>Vốn góp</h4>
-              <p class="text-muted-soft">Vốn đầu vào của cổ đông, phản ánh năng lực huy động vốn.</p>
+          <div class="row g-4 mt-3">
+            <div class="col-lg-6">
+              <div class="highlight-card p-4 h-100">
+                <h3>Thay đổi vốn chủ sở hữu</h3>
+                <p class="text-muted-soft">Theo dõi nguồn vốn, lợi nhuận giữ lại và cổ tức.</p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="highlight-card p-4 h-100">
+                <h3>Thuyết minh báo cáo</h3>
+                <p class="text-muted-soft">Giải thích chuẩn mực, chính sách và các thông tin bổ sung.</p>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="highlight-card p-4 h-100">
-              <h4>Lợi nhuận giữ lại</h4>
-              <p class="text-muted-soft">Phần lợi nhuận không chia cổ tức, bổ sung vốn cho hoạt động.</p>
+        </section>
+
+        <section id="balance-sheet" class="mb-5">
+          <div class="section-heading"><h2>MỤC I: BẢNG CÂN ĐỐI KẾ TOÁN (Thời điểm)</h2></div>
+          <div class="section-card p-4 mb-4">
+              <p class="text-muted-soft">Bảng cân đối trình bày tình hình tài sản và nguồn vốn tại thời điểm kết thúc kỳ kế toán, giúp đối chiếu khả năng thanh toán và cấu trúc vốn.</p>
+            <h3>1. PHẦN TÀI SẢN</h3>
+            <div class="ps-3">
+              <h4 id="current-assets" class="mb-3">1.1. Tài sản ngắn hạn</h4>
+              <ul class="list-unstyled text-muted-soft">
+                <li class="mb-2"><strong>1.1.1.</strong> Tiền và các khoản tương đương tiền: Tiền mặt, tiền gửi ngân hàng.</li>
+                <li class="mb-2"><strong>1.1.2.</strong> Đầu tư tài chính ngắn hạn: Chứng khoán, tiền gửi kỳ hạn dưới 1 năm.</li>
+                <li class="mb-2"><strong>1.1.3.</strong> Các khoản phải thu ngắn hạn: Phải thu khách hàng, trả trước người bán.</li>
+                <li class="mb-2"><strong>1.1.4.</strong> Hàng tồn kho: Nguyên vật liệu, công cụ, thành phẩm, hàng hóa.</li>
+                <li><strong>1.1.5.</strong> Tài sản ngắn hạn khác: Thuế GTGT được khấu trừ, chi phí trả trước ngắn hạn.</li>
+              </ul>
             </div>
           </div>
-        </div>
-        <div class="mt-4">
-          <div class="info-pill">Lưu ý:</div>
-          <p class="mt-3 text-muted-soft">Tăng vốn chủ sở hữu giúp cải thiện khả năng chịu đựng rủi ro và tăng tín nhiệm vay vốn.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="notes" class="mb-5">
-      <div class="section-heading"><h2>Ghi chú thuyết minh</h2></div>
-      <div class="section-card p-4">
-        <p class="text-muted-soft">Ghi chú là phần quan trọng giúp giải thích phương pháp kế toán, các giả định ước tính và các sự kiện tài chính đặc biệt.</p>
-        <div class="row g-4 mt-4">
-          <div class="col-md-6">
-            <div class="highlight-card p-4 h-100">
-              <h4>Chính sách kế toán</h4>
-              <p class="text-muted-soft">Ghi rõ phương pháp ghi nhận doanh thu, khấu hao, đánh giá hàng tồn kho.</p>
+          <div class="section-card p-4 mb-4">
+            <div class="ps-3">
+              <h4 id="long-term-assets" class="mb-3">1.2. Tài sản dài hạn</h4>
+              <ul class="list-unstyled text-muted-soft">
+                <li class="mb-2"><strong>1.2.1.</strong> Các khoản phải thu dài hạn.</li>
+                <li class="mb-2"><strong>1.2.2.</strong> Tài sản cố định (Hữu hình, vô hình - Nguyên giá và Hao mòn lũy kế).</li>
+                <li class="mb-2"><strong>1.2.3.</strong> Bất động sản đầu tư.</li>
+                <li class="mb-2"><strong>1.2.4.</strong> Tài sản dở dang dài hạn (Chi phí xây dựng cơ bản dở dang).</li>
+                <li class="mb-2"><strong>1.2.5.</strong> Đầu tư tài chính dài hạn (Góp vốn vào công ty con, liên doanh, liên kết).</li>
+                <li><strong>1.2.6.</strong> Tài sản dài hạn khác: Chi phí trả trước dài hạn.</li>
+              </ul>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="highlight-card p-4 h-100">
-              <h4>Rủi ro & ước tính</h4>
-              <p class="text-muted-soft">Giải thích giả định về dự phòng nợ xấu, tồn kho và chi phí bảo hành.</p>
+          <div id="liabilities-equity" class="section-card p-4">
+            <h3>2. PHẦN NGUỒN VỐN</h3>
+            <div class="ps-3">
+              <h4 class="mb-3">2.1. Nợ phải trả</h4>
+              <ul class="list-unstyled text-muted-soft">
+                <li class="mb-2"><strong>2.1.1.</strong> Nợ ngắn hạn: Phải trả người bán, vay ngắn hạn, thuế phải nộp, lương nhân viên.</li>
+                <li><strong>2.1.2.</strong> Nợ dài hạn: Vay và nợ thuê tài chính dài hạn, trái phiếu phát hành.</li>
+              </ul>
+              <h4 class="mt-4 mb-3">2.2. Vốn chủ sở hữu</h4>
+              <ul class="list-unstyled text-muted-soft">
+                <li class="mb-2"><strong>2.2.1.</strong> Vốn đầu tư của chủ sở hữu: Vốn điều lệ, thặng dư vốn cổ phần.</li>
+                <li class="mb-2"><strong>2.2.2.</strong> Các quỹ của doanh nghiệp: Quỹ đầu tư phát triển.</li>
+                <li><strong>2.2.3.</strong> Lợi nhuận sau thuế chưa phân phối: Lợi nhuận tích lũy.</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="ratios" class="mb-5">
-      <div class="section-heading"><h2>Chỉ số tài chính</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">Hệ số thanh toán hiện hành</div>
-            <div class="metric-value">1.72x</div>
-            <p class="metric-note">Tài sản ngắn hạn / nợ ngắn hạn.</p>
+        <section id="income-statement" class="mb-5">
+          <div class="section-heading"><h2>MỤC II: BÁO CÁO KẾT QUẢ HOẠT ĐỘNG KINH DOANH (Thời kỳ)</h2></div>
+          <div class="section-card p-4">
+              <p class="text-muted-soft">Báo cáo kết quả hoạt động trình bày sự biến động doanh thu, chi phí và lợi nhuận trong kỳ, phản ánh hiệu quả điều hành và khả năng sinh lời.</p>
+            <ol class="text-muted-soft ps-3">
+              <li class="mb-2">Doanh thu bán hàng và cung cấp dịch vụ.</li>
+              <li class="mb-2">Các khoản giảm trừ doanh thu (Chiết khấu, giảm giá, hàng bán bị trả lại).</li>
+              <li class="mb-2">Doanh thu thuần về bán hàng và cung cấp dịch vụ.</li>
+              <li class="mb-2">Giá vốn hàng bán (Chi phí trực tiếp sản xuất/mua hàng).</li>
+              <li class="mb-2">Lợi nhuận gộp về bán hàng và cung cấp dịch vụ.</li>
+              <li class="mb-2">Doanh thu hoạt động tài chính (Lãi tiền gửi, lãi tỷ giá, cổ tức).</li>
+              <li class="mb-2">Chi phí tài chính.
+                <div class="ps-3 mt-2 text-muted-soft"><strong>7.1.</strong> Trong đó: Chi phí lãi vay ngân hàng.</div>
+              </li>
+              <li class="mb-2">Chi phí bán hàng (Vận chuyển, quảng cáo, lương sales).</li>
+              <li class="mb-2">Chi phí quản lý doanh nghiệp (Văn phòng phẩm, khấu hao, lương quản lý).</li>
+              <li class="mb-2">Lợi nhuận thuần từ hoạt động kinh doanh.</li>
+              <li class="mb-2">Thu nhập khác & Chi phí khác.</li>
+              <li class="mb-2">Lợi nhuận khác.</li>
+              <li class="mb-2">Tổng lợi nhuận kế toán trước thuế.</li>
+              <li class="mb-2">Chi phí thuế thu nhập doanh nghiệp (Thuế TNDN).</li>
+              <li>Lợi nhuận sau thuế thu nhập doanh nghiệp (Lợi nhuận ròng).</li>
+            </ol>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">ROA</div>
-            <div class="metric-value">8.3%</div>
-            <p class="metric-note">Lợi nhuận sau thuế / tổng tài sản.</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="metric-card p-4 h-100">
-            <div class="metric-label">ROE</div>
-            <div class="metric-value">12.7%</div>
-            <p class="metric-note">Lợi nhuận sau thuế / vốn chủ sở hữu.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section id="actions" class="mb-5">
-      <div class="section-heading"><h2>Đề xuất hành động</h2></div>
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h4>1. Tăng cường thu hồi nợ</h4>
-            <p class="text-muted-soft">Giảm nợ xấu và tăng dòng tiền hoạt động.</p>
+        <section id="cashflow" class="mb-5">
+          <div class="section-heading"><h2>MỤC III: BÁO CÁO LƯU CHUYỂN TIỀN TỆ (Dòng tiền thực tế)</h2></div>
+          <div class="section-card p-4">
+              <p class="text-muted-soft">Báo cáo lưu chuyển tiền tệ mô tả dòng tiền thực tế chảy vào và ra trong kỳ, giúp xác định thanh khoản và khả năng tài trợ.</p>
+            <ol class="text-muted-soft ps-3">
+              <li class="mb-2">Lưu chuyển tiền từ hoạt động kinh doanh (CFO): Tiền thu từ khách hàng, tiền chi trả nhà cung cấp, trả lương, nộp thuế.</li>
+              <li class="mb-2">Lưu chuyển tiền từ hoạt động đầu tư (CFI): Tiền mua sắm/thanh lý máy móc, nhà xưởng; tiền chi cho vay, góp vốn.</li>
+              <li class="mb-2">Lưu chuyển tiền từ hoạt động tài chính (CFF): Tiền thu từ phát hành cổ phiếu, nhận vốn góp, tiền đi vay; tiền trả nợ gốc vay, chia cổ tức.</li>
+              <li class="mb-2">Lưu chuyển tiền thuần trong kỳ.</li>
+              <li>Tiền và tương đương tiền đầu kỳ & cuối kỳ.</li>
+            </ol>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h4>2. Kiểm soát chi phí</h4>
-            <p class="text-muted-soft">Rà soát chi phí bán hàng và quản lý để cải thiện biên lợi nhuận.</p>
+        </section>
+
+        <section id="notes" class="mb-5">
+          <div class="section-heading"><h2>MỤC IV: BẢN THUYẾT MINH BÁO CÁO TÀI CHÍNH</h2></div>
+          <div class="section-card p-4">
+            <p class="text-muted-soft">Bản thuyết minh mở rộng bối cảnh, giải thích số liệu và chính sách, giúp người đọc hiểu rõ căn cứ, giả định và rủi ro trong báo cáo.</p>
+            <ol class="text-muted-soft ps-3">
+              <li class="mb-2">Đặc điểm hoạt động của doanh nghiệp (Hình thức sở hữu, ngành nghề kinh doanh).</li>
+              <li class="mb-2">Kỳ kế toán và đơn vị tiền tệ sử dụng.</li>
+              <li class="mb-2">Chuẩn mực và chế độ kế toán áp dụng (Thông tư áp dụng).</li>
+              <li class="mb-2">Các chính sách kế toán áp dụng (Phương pháp tính giá kho, phương pháp khấu hao).</li>
+              <li class="mb-2">Thông tin bổ sung cho các khoản mục trong Bảng cân đối kế toán.</li>
+              <li class="mb-2">Thông tin bổ sung cho các khoản mục trong Báo cáo kết quả kinh doanh.</li>
+              <li>Các thông tin khác (Nợ tiềm tàng, sự kiện phát sinh sau ngày khóa sổ).</li>
+            </ol>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="highlight-card p-4 h-100">
-            <h4>3. Nâng cao dòng tiền</h4>
-            <p class="text-muted-soft">Tập trung vào hoạt động kinh doanh tạo tiền mặt và hạn chế đầu tư bất hợp lý.</p>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer class="footer-soft py-4">
